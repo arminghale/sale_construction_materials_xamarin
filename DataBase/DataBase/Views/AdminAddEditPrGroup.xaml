@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.AdminAddEditPrGroup"
+             Title="PrGroups">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="FloralWhite">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+                <Label Text="عنوان گروه" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="title" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                <Label Text="واحد اندازه گیری" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="vahed" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                <StackLayout >
+                    <StackLayout.Padding>50,0,50,0</StackLayout.Padding>
+                    <StackLayout BackgroundColor="Black">
+                        <Button x:Name="btn_field" IsEnabled="True" Text="افزودن فیلد" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <Grid x:Name="fields">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <!--<StackLayout Grid.Column="0" Grid.Row="0">
+                            <Label Text="عنوان گروه" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            <StackLayout BackgroundColor="DarkRed">
+                                <Button Clicked="btn_fielddelete" IsEnabled="True" Text="حذف فیلد" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" Grid.Row="0" >
+                            <Label Text="عنوان گروه" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            <StackLayout BackgroundColor="DarkRed">
+                                <Button Clicked="btn_fielddelete" IsEnabled="True" Text="حذف فیلد" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Column="2" Grid.Row="0">
+                            <Label Text="عنوان گروه" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            <StackLayout BackgroundColor="DarkRed">
+                                <Button Clicked="btn_fielddelete" IsEnabled="True" Text="حذف فیلد" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                            </StackLayout>
+                        </StackLayout>-->
+                    </Grid>
+                </StackLayout>
+                <StackLayout >
+                    <StackLayout.Padding>50,50,50,0</StackLayout.Padding>
+                    <StackLayout BackgroundColor="Green">
+                        <Button x:Name="btn_taiid" IsEnabled="True" Text="ثبت" BackgroundColor="DarkGreen"  TextColor="White"></Button>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="DarkRed">
+                        <Button x:Name="btn_laghv" IsEnabled="True" Text="لغو" BackgroundColor="Red"  TextColor="White"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

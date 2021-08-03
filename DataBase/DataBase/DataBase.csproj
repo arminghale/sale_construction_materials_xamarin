@@ -1,0 +1,169 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Plugin.FileUploader" Version="1.4.0" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\ActiveCode.xaml.cs">
+      <DependentUpon>ActiveCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminAddEditPerson.xaml.cs">
+      <DependentUpon>AdminAddEditPerson.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminAddEditUser.xaml.cs">
+      <DependentUpon>AdminAddEditUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminAddBasket.xaml.cs">
+      <DependentUpon>AdminAddBasket.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminAddTakhfifProduct.xaml.cs">
+      <DependentUpon>AdminAddTakhfifProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminAddEditProduct.xaml.cs">
+      <DependentUpon>AdminAddEditProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AnbarDetailsProduct.xaml.cs">
+      <DependentUpon>AnbarDetailsProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminDetailsUser.xaml.cs">
+      <DependentUpon>AdminDetailsUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminDetailsProduct.xaml.cs">
+      <DependentUpon>AdminDetailsProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminDetailsPrGroup.xaml.cs">
+      <DependentUpon>AdminDetailsPrGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminChangePass.xaml.cs">
+      <DependentUpon>AdminChangePass.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AnbarProduct.xaml.cs">
+      <DependentUpon>AnbarProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AnbarHome.xaml.cs">
+      <DependentUpon>AnbarHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminHome.xaml.cs">
+      <DependentUpon>AdminHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminBasket.xaml.cs">
+      <DependentUpon>AdminBasket.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminDetailsBasket.xaml.cs">
+      <DependentUpon>AdminDetailsBasket.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminSendMessage.xaml.cs">
+      <DependentUpon>AdminSendMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminUser.xaml.cs">
+      <DependentUpon>AdminUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminTakhfifsProduct.xaml.cs">
+      <DependentUpon>AdminTakhfifsProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminProduct.xaml.cs">
+      <DependentUpon>AdminProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminPrGroup.xaml.cs">
+      <DependentUpon>AdminPrGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminAddEditPrGroup.xaml.cs">
+      <DependentUpon>AdminAddEditPrGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminUserAddresses.xaml.cs">
+      <DependentUpon>AdminUserAddresses.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminUserAddEditAddress.xaml.cs">
+      <DependentUpon>AdminUserAddEditAddress.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminRecMessage.xaml.cs">
+      <DependentUpon>AdminRecMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminAddMessage.xaml.cs">
+      <DependentUpon>AdminAddMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\HomeBasket.xaml.cs">
+      <DependentUpon>HomeBasket.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\HomeProduct.xaml.cs">
+      <DependentUpon>HomeProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AnbarChangePass.xaml.cs">
+      <DependentUpon>AnbarChangePass.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UserOrders.xaml.cs">
+      <DependentUpon>UserOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminUserShowMessage.xaml.cs">
+      <DependentUpon>AdminUserShowMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UserShowMessage.xaml.cs">
+      <DependentUpon>UserShowMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UserSendMessages.xaml.cs">
+      <DependentUpon>UserSendMessages.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UserMessages.xaml.cs">
+      <DependentUpon>UserMessages.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UserAddress.xaml.cs">
+      <DependentUpon>UserAddress.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UserAddChangeAddress.xaml.cs">
+      <DependentUpon>UserAddChangeAddress.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UserChangeInfo.xaml.cs">
+      <DependentUpon>UserChangeInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UserChangePass.xaml.cs">
+      <DependentUpon>UserChangePass.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ForgetPass.xaml.cs">
+      <DependentUpon>ForgetPass.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ChangePass.xaml.cs">
+      <DependentUpon>ChangePass.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ContactUS.xaml.cs">
+      <DependentUpon>ContactUS.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Register2.xaml.cs">
+      <DependentUpon>Register2.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Register1.xaml.cs">
+      <DependentUpon>Register1.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NotNet.xaml.cs">
+      <DependentUpon>NotNet.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UserHome.xaml.cs">
+      <DependentUpon>UserHome.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Login.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

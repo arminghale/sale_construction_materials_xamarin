@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataBase"
+             x:Class="DataBase.Views.AdminBasket"
+             Title="Basket">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <local:Baskets/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="FloralWhite">
+            <Frame>
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                    <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+
+                    <StackLayout BackgroundColor="Black">
+                        <Button x:Name="btn_add" IsEnabled="True" Text="ثبت سفارش" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <ScrollView BackgroundColor="FloralWhite">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0" >
+                        <StackLayout.Padding>100,0,100,0</StackLayout.Padding>
+                        <ListView BackgroundColor="FloralWhite"  VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" HasUnevenRows="True" SelectionMode="None" ItemsSource="{Binding orders}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell >
+                                        <Frame BorderColor="DarkGray"  CornerRadius="10"  Margin="5,5,5,0">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto" />
+                                                    <ColumnDefinition Width="auto" />
+                                                    <ColumnDefinition Width="auto" />
+                                                    <ColumnDefinition Width="auto" />
+                                                    <ColumnDefinition Width="auto" />
+                                                    <ColumnDefinition Width="auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="5"
+                                                       ClassId="{Binding id}"
+                                                        Text="{Binding total2}"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        VerticalTextAlignment="End"
+                                                       FontSize="Default" TextColor="Black"/>
+                                                <Label Grid.Column="4"
+                                                        Text="{Binding vaziat}"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        VerticalTextAlignment="Center"
+                                                       FontSize="Default" TextColor="DarkRed"/>
+                                                <StackLayout BackgroundColor="Orange" Grid.Column="3" IsVisible="{Binding readybool}">
+                                                    <Button
+                                                    Clicked="btn_change"
+                                                    FontSize="Default" FontAttributes="Bold" TextColor="Black" BackgroundColor="DarkGray" Text="تغییر وضعیت به آماده شده"/>
+                                                </StackLayout >
+                                                <StackLayout BackgroundColor="Orange" Grid.Column="3" IsVisible="{Binding sendbool}">
+                                                    <Button
+                                                    Clicked="btn_change2"
+                                                    FontSize="Default" FontAttributes="Bold" TextColor="Black" BackgroundColor="DarkGray" Text="تغییر وضعیت به ارسال شده"/>
+                                                </StackLayout >
+                                                <StackLayout BackgroundColor="DodgerBlue" Grid.Column="2">
+                                                    <Button Clicked="btn_info"
+                                                    FontSize="Default" FontAttributes="Bold" TextColor="Black" BackgroundColor="DarkGray" Text="مشاهده"/>
+                                                </StackLayout >
+                                                <StackLayout BackgroundColor="DarkRed" Grid.Column="1" IsVisible="{Binding canselbool}">
+                                                    <Button Clicked="btn_cansel"
+                                                    FontSize="Default" FontAttributes="Bold" TextColor="White" BackgroundColor="DarkGray" Text="کنسل کردن سفارش"/>
+                                                </StackLayout >
+                                                <StackLayout BackgroundColor="DarkRed" Grid.Column="0">
+                                                    <Button Clicked="btn_delete"
+                                                    FontSize="Default" FontAttributes="Bold" TextColor="White" BackgroundColor="DarkGray" Text="حذف"/>
+                                                </StackLayout >
+                                                
+                                            </Grid>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Grid>
+
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

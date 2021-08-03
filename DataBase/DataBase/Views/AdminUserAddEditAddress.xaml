@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.AdminUserAddEditAddress"
+             Title="Addresses">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+      <StackLayout BackgroundColor="FloralWhite">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+
+                    <Grid>
+                        <Picker VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" x:Name="shakhs" FontSize="Default" Title="گیرنده" Grid.Row="0" Grid.Column="0" Margin="25,0,0,0" >
+                        </Picker>
+                    </Grid>
+                    <Label x:Name="lg1" Text="نام گیرنده" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="girandename" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+
+                <Label x:Name="lg2" Text="نام خانوادگی گیرنده" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+            <Entry x:Name="girandelastname" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                <Label x:Name="lg3" Text="شماره تلفن گیرنده" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+            <Entry x:Name="girandephonenumber" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                <Label Text="استان" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Picker x:Name="ostan" VerticalTextAlignment="Center"></Picker>
+                <Label Text="شهر" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Picker x:Name="shahr" VerticalTextAlignment="Center"></Picker>
+                <Label Text="کدپستی" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="codeposti" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                <Label Text="آدرس" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="text" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                <StackLayout >
+                    <StackLayout.Padding>50,0,50,0</StackLayout.Padding>
+                    <StackLayout BackgroundColor="Green">
+                        <Button x:Name="btn_taiid" IsEnabled="True" Text="ثبت" BackgroundColor="DarkGreen"  TextColor="White"></Button>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="DarkRed">
+                        <Button x:Name="btn_laghv" IsEnabled="True" Text="لغو" BackgroundColor="Red"  TextColor="White"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.AdminDetailsPrGroup"
+             Title="PrGroups">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="FloralWhite">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+                <Label Text="عنوان گروه" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label x:Name="title" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label Text="واحد اندازه گیری" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,10,0,0"></Label>
+                <Label x:Name="vahed" FontAttributes="Bold"  TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <StackLayout >
+                    <StackLayout.Padding>50,0,50,0</StackLayout.Padding>
+                    <StackLayout>
+                        <Label Text="فیلد ها" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <Grid x:Name="fields">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <!--<StackLayout Grid.Column="0" Grid.Row="0">
+                            <Label Text="عنوان گروه" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            <StackLayout BackgroundColor="DarkRed">
+                                <Button Clicked="btn_fielddelete" IsEnabled="True" Text="حذف فیلد" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" Grid.Row="0" >
+                            <Label Text="عنوان گروه" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            <StackLayout BackgroundColor="DarkRed">
+                                <Button Clicked="btn_fielddelete" IsEnabled="True" Text="حذف فیلد" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Column="2" Grid.Row="0">
+                            <Label Text="عنوان گروه" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            <StackLayout BackgroundColor="DarkRed">
+                                <Button Clicked="btn_fielddelete" IsEnabled="True" Text="حذف فیلد" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                            </StackLayout>
+                        </StackLayout>-->
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

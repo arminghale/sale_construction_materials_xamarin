@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.HomeProduct"
+             Title="Home">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="FloralWhite">
+            <StackLayout VerticalOptions="StartAndExpand">
+                <StackLayout.Padding>100,0,100,0</StackLayout.Padding>
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+                <StackLayout x:Name="basket" BackgroundColor="Orange" IsVisible="false">
+                    <StackLayout.Margin>350,50,350,20</StackLayout.Margin>
+                    <Button x:Name="btn_basket" BackgroundColor="DarkOrange" Text="سبد خرید" TextColor="Black"></Button>
+                </StackLayout>
+                <ScrollView>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" HorizontalOptions="EndAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row="0" >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="2" x:Name="next" BackgroundColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                        <Button x:Name="btn_next" BackgroundColor="DarkGray" Text="بعدی" TextColor="White"></Button>
+                                    </StackLayout >
+                                    <Frame Grid.Column="1"
+                               HorizontalOptions="Center"
+                               VerticalOptions="CenterAndExpand">
+                                        <Image x:Name="image"
+                               Aspect="AspectFill"
+                               HeightRequest="300"
+                               WidthRequest="500"
+                               HorizontalOptions="Center" />
+                                    </Frame>
+                                    <StackLayout Grid.Column="0" x:Name="pev" BackgroundColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                        <Button x:Name="btn_pev" BackgroundColor="DarkGray" Text="قبلی" TextColor="White"></Button>
+                                    </StackLayout>
+                                </Grid>
+
+                            </StackLayout>
+                        </Grid>
+                        <Frame Grid.Row="1" BorderColor="darkgray" CornerRadius="5">
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" x:Name="title" FontSize="Large" FontAttributes="Bold" TextColor="Black"></Label>
+                                <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" x:Name="prgroup" FontSize="Default" TextColor="Black"></Label>
+                                <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" x:Name="text" FontSize="Default" TextColor="Black"></Label>
+                                <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" x:Name="price" FontSize="Default" TextColor="Black"></Label>
+                                <Label Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" x:Name="pricetakhfif" FontSize="Default" FontAttributes="Bold" TextColor="DarkRed"></Label>
+                                <StackLayout Grid.Row="2" Grid.Column="0" >
+                                    <Entry x:Name="tedad" Placeholder="تعداد" PlaceholderColor="Black" BackgroundColor="DarkGray" TextColor="Black" VerticalOptions="CenterAndExpand"></Entry>
+                                    <StackLayout BackgroundColor="Orange" VerticalOptions="CenterAndExpand">
+                                        <Button x:Name="btn_add" BackgroundColor="DarkGray" Text="خرید" TextColor="Black"></Button>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                        <StackLayout Grid.Row="2">
+                            <ListView x:Name="field" BackgroundColor="FloralWhite"  VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" HasUnevenRows="True" SelectionMode="None">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell >
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Frame Grid.Column="0" BorderColor="Black" BackgroundColor="White">
+                                                    <Label 
+                                                       ClassId="{Binding id}"
+                                                        Text="{Binding text}"
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        VerticalTextAlignment="Center"
+                                                       FontSize="Default" TextColor="Black" />
+                                                </Frame>
+                                                <Frame Grid.Column="1" BorderColor="Black"  BackgroundColor="LightGray">
+                                                    <Label 
+                                                       ClassId="{Binding id}"
+                                                        Text="{Binding FieldString}"
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        VerticalTextAlignment="Center"
+                                                       FontSize="Default" TextColor="Black" FontAttributes="Bold"/>
+                                                </Frame>
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+                        </StackLayout>
+
+                    </Grid>
+                </ScrollView>
+                
+
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

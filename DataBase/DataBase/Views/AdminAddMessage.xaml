@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.AdminAddMessage"
+             Title="Messages">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+      <StackLayout BackgroundColor="FloralWhite">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+
+                <Label x:Name="user" Text="کاربر" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Grid x:Name="se">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Entry x:Name="search" BackgroundColor="NavajoWhite" TextColor="Black" Placeholder="جستجو کاربر" Grid.Column="1" VerticalOptions="EndAndExpand"></Entry>
+                    <StackLayout BackgroundColor="CadetBlue" Grid.Column="0" VerticalOptions="StartAndExpand">
+                    <Button x:Name="btn_search" Text="جستجو" BackgroundColor="DarkGray"  TextColor="Black" ></Button>
+                    </StackLayout>
+                </Grid>
+                <Picker x:Name="username" BackgroundColor="NavajoWhite" TextColor="Black"></Picker>
+                <Label Text="متن پیام" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="text" BackgroundColor="NavajoWhite" TextColor="Black" HeightRequest="50"></Entry>
+                <StackLayout >
+                    <StackLayout.Padding>50,0,50,0</StackLayout.Padding>
+                    <StackLayout BackgroundColor="Green">
+                        <Button x:Name="btn_send" IsEnabled="True" Text="ارسال" BackgroundColor="DarkGreen"  TextColor="White"></Button>
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+            
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

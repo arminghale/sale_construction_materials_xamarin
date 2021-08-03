@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.Register1"
+             Title="Register">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+      <StackLayout BackgroundColor="FloralWhite">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+
+                <Label Text="ایمیل" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="email" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+
+                <Label Text="نام کاربری" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+            <Entry x:Name="username" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+            <Label Text="رمز عبور" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+            <Entry x:Name="password" IsPassword="True" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                <Label Text="تکرار رمز عبور" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="repassword" IsPassword="True" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+
+                <StackLayout >
+                    <StackLayout.Padding>50,0,50,0</StackLayout.Padding>
+                    <StackLayout BackgroundColor="Green">
+                        <Button x:Name="btn_register" IsEnabled="True" Text="ثبت نام" BackgroundColor="DarkGreen"  TextColor="White"></Button>
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+            
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

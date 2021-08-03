@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataBase"
+             x:Class="DataBase.Views.AdminPrGroup"
+             Title="PrGroups">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <local:PrGroups/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="FloralWhite">
+            <Frame>
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                    <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+
+                    <StackLayout BackgroundColor="Black">
+                        <Button x:Name="btn_add" IsEnabled="True" Text="افزودن گروه" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <ScrollView BackgroundColor="FloralWhite">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0" >
+                        <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                        <ListView BackgroundColor="FloralWhite"  VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" HasUnevenRows="True" SelectionMode="None" ItemsSource="{Binding groups}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell >
+                                        <Frame BorderColor="DarkGray"  CornerRadius="10"  Margin="5,5,5,0">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Grid.Column="3"
+                                                       ClassId="{Binding id}"
+                                                        Text="{Binding title}"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        VerticalTextAlignment="Start"
+                                                       FontSize="Default" TextColor="Black"/>
+                                                <StackLayout BackgroundColor="Orange" Grid.Column="2">
+                                                    <Button
+                                                    Clicked="btn_edit"
+                                                    FontSize="Default" FontAttributes="Bold" TextColor="Black" BackgroundColor="DarkGray" Text="تغییر"/>
+                                                </StackLayout >
+                                                <StackLayout BackgroundColor="DodgerBlue" Grid.Column="1">
+                                                    <Button Clicked="btn_info"
+                                                    FontSize="Default" FontAttributes="Bold" TextColor="Black" BackgroundColor="DarkGray" Text="جزئیات"/>
+                                                </StackLayout >
+                                                <StackLayout BackgroundColor="DarkRed" Grid.Column="0">
+                                                    <Button Clicked="btn_delete"
+                                                    FontSize="Default" FontAttributes="Bold" TextColor="White" BackgroundColor="DarkGray" Text="حذف"/>
+                                                </StackLayout >
+                                            </Grid>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Grid>
+
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

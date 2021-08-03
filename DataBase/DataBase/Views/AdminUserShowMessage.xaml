@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataBase"
+             x:Class="DataBase.Views.AdminUserShowMessage"
+             Title="Messages">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <local:RecMessages/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        
+      <StackLayout BackgroundColor="FloralWhite">
+            <StackLayout VerticalOptions="StartAndExpand">
+                <StackLayout.Padding>300,100,300,0</StackLayout.Padding>
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+
+                <Label x:Name="name" FontSize="Large" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label x:Name="date" FontSize="Large" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label Text="متن پیام:" FontSize="Default" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label x:Name="text" Text="خوش آمدید" FontSize="Default" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+            </StackLayout>
+            <StackLayout >
+                <StackLayout.Padding>50,50,50,0</StackLayout.Padding>
+                <StackLayout BackgroundColor="Green" IsVisible="false" x:Name="res">
+                    <Button x:Name="btn_response" IsEnabled="True" Text="پاسخ" BackgroundColor="DarkGreen"  TextColor="White"></Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

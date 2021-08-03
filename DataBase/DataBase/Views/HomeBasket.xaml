@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.HomeBasket"
+             Title="Home">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="FloralWhite">
+            <StackLayout VerticalOptions="StartAndExpand">
+                <StackLayout.Padding>100,0,100,0</StackLayout.Padding>
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+                <ScrollView>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Frame Grid.Row="0" BorderColor="darkgray" CornerRadius="5">
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" x:Name="Total" FontSize="Body" FontAttributes="Bold" TextColor="Black"></Label>
+                                <Picker Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" x:Name="Address" FontSize="Default" TextColor="Black"></Picker>
+                                <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" x:Name="Girande" FontSize="Default" TextColor="Black"></Label>
+                                <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="DarkGreen" VerticalOptions="CenterAndExpand">
+                                    <Button x:Name="btn_add" BackgroundColor="DarkGray" Text="پرداخت" TextColor="Black"></Button>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                        <StackLayout Grid.Row="1">
+                            <StackLayout.Padding>300,25,300,25</StackLayout.Padding>
+                            <ListView x:Name="Items" ItemTapped="Items_ItemTapped" BackgroundColor="FloralWhite"  HasUnevenRows="True" SelectionMode="None">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell >
+                                            <Frame BorderColor="DarkGray"  CornerRadius="10"  Margin="5,5,5,0">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="auto" />
+                                                        <ColumnDefinition Width="auto" />
+                                                        <ColumnDefinition Width="auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <Label Grid.Column="5"
+                                                           ClassId="{Binding id}"
+                                                        Text="{Binding title}"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        VerticalTextAlignment="End"
+                                                       FontSize="Default" TextColor="Black"/>
+                                                    <Label Grid.Column="4"
+                                                           ClassId="{Binding id}"
+                                                        Text="{Binding co}"
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        VerticalTextAlignment="Center"
+                                                       FontSize="Default" TextColor="Black"/>
+                                                    <Label Grid.Column="3"
+                                                           ClassId="{Binding id}"
+                                                        Text="{Binding mab}"
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        VerticalTextAlignment="Center"
+                                                       FontSize="Default" TextColor="Black"/>
+                                                    <StackLayout Grid.Column="2" BackgroundColor="DarkGreen" VerticalOptions="CenterAndExpand">
+                                                        <Button Clicked="btn_up_Clicked" x:Name="btn_up" BackgroundColor="DarkGray" Text=" + " TextColor="Black"></Button>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Column="1" BackgroundColor="Black" VerticalOptions="CenterAndExpand">
+                                                        <Button Clicked="btn_down_Clicked" x:Name="btn_down" BackgroundColor="DarkGray" Text=" - " TextColor="Black"></Button>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Column="0" BackgroundColor="DarkRed" VerticalOptions="CenterAndExpand">
+                                                        <Button Clicked="btn_del_Clicked" x:Name="btn_del" BackgroundColor="DarkGray" Text="حذف" TextColor="Black"></Button>
+                                                    </StackLayout>
+                                                </Grid>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </Grid>
+                </ScrollView>
+                
+
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.Home"
+             Title="Home">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="FloralWhite">
+            <StackLayout VerticalOptions="StartAndExpand">
+                <StackLayout.Padding>100,0,100,0</StackLayout.Padding>
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+                <StackLayout x:Name="basket" BackgroundColor="Orange" IsVisible="false">
+                    <StackLayout.Margin>350,50,350,20</StackLayout.Margin>
+                    <Button x:Name="btn_basket" BackgroundColor="DarkOrange" Text="سبد خرید" TextColor="Black"></Button>
+                </StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1" HorizontalOptions="EndAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0" >
+                            <ListView x:Name="group" ItemTapped="group_ItemTapped" BackgroundColor="FloralWhite"  VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" HasUnevenRows="True" SelectionMode="Single">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell >
+                                            <Frame BorderColor="DarkGray"  CornerRadius="10"  Margin="5,5,5,0">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Grid.Column="0"
+                                                       ClassId="{Binding id}"
+                                                        Text="{Binding title}"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        VerticalTextAlignment="Start"
+                                                       FontSize="Default" TextColor="Black"/>
+                                                </Grid>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Column="0" HorizontalOptions="EndAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Picker Grid.Column="2" x:Name="sort" BackgroundColor="DarkGray"></Picker>
+                            <Entry Grid.Column="1" x:Name="search" Placeholder="جستجو" BackgroundColor="DarkGray"></Entry>
+                            <StackLayout Grid.Column="0" BackgroundColor="Black">
+                                <Button x:Name="btn_search" Text="جستجو" BackgroundColor="DarkGray"></Button>
+                            </StackLayout>
+                        </Grid>
+                        <StackLayout Grid.Row="1">
+                            <ListView x:Name="product" ItemTapped="product_ItemTapped" BackgroundColor="FloralWhite"  VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" HasUnevenRows="True" SelectionMode="None">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell >
+                                            <Frame BorderColor="DarkGray"  CornerRadius="10"  Margin="5,5,5,0">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image Grid.Column="3" Source="{Binding imagesource}"></Image>
+                                                    <Label Grid.Column="2"
+                                                       ClassId="{Binding id}"
+                                                        Text="{Binding title}"
+                                                        HorizontalOptions="EndAndExpand"
+                                                           VerticalOptions="CenterAndExpand"
+                                                        VerticalTextAlignment="Center"
+                                                       FontSize="Default" FontAttributes="Bold" TextColor="Black"/>
+                                                    <Label Grid.Column="1"
+                                                       ClassId="{Binding id}"
+                                                        Text="{Binding pricestring}"
+                                                        HorizontalOptions="EndAndExpand"
+                                                           VerticalOptions="CenterAndExpand"
+                                                        VerticalTextAlignment="Start"
+                                                       FontSize="Default" TextColor="Black"/>
+                                                    <Label Grid.Column="0"
+                                                       ClassId="{Binding id}"
+                                                        Text="{Binding pricewithtakhfif2}"
+                                                        IsVisible="{Binding istakhfif}"
+                                                        HorizontalOptions="EndAndExpand"
+                                                           VerticalOptions="CenterAndExpand"
+                                                        VerticalTextAlignment="Start"
+                                                       FontSize="Default" TextColor="Black"/>
+                                                </Grid>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </Grid>
+
+                </Grid>
+
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

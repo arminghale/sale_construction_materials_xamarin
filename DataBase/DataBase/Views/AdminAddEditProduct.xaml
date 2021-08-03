@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.AdminAddEditProduct"
+             Title="Product">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="FloralWhite">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                    <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+
+                    <Picker VerticalTextAlignment="Center" x:Name="prgroupid" SelectedItem="انتخاب کنید"></Picker>
+                    <Label Text="عنوان" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Entry x:Name="title" VerticalTextAlignment="Center" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                    <Label Text="قیمت به تومان" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Entry x:Name="price" VerticalTextAlignment="Center" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                    <Label Text="تعداد" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Entry x:Name="count" VerticalTextAlignment="Center" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                    <Label Text="مدت آماده سازی" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Entry x:Name="readyday" VerticalTextAlignment="Center" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                    <Label Text="مدت ارسال" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Entry x:Name="sendday" VerticalTextAlignment="Center" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                    <Label Text="تگ" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Entry x:Name="tag" VerticalTextAlignment="Center" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                    <Label Text="توضیخات" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Editor x:Name="text" VerticalOptions="Center" BackgroundColor="NavajoWhite" TextColor="Black"></Editor>
+                    <StackLayout >
+                        <StackLayout.Padding>50,0,50,0</StackLayout.Padding>
+                        <StackLayout BackgroundColor="Black">
+                            <Button x:Name="uploadmainimage" IsEnabled="True" Text="آپلود تصویر اصلی" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                            <Image IsVisible="false" x:Name="asliimage" Aspect="AspectFill" WidthRequest="200" HeightRequest="200"></Image>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout >
+                        <StackLayout.Padding>50,0,50,0</StackLayout.Padding>
+                        <StackLayout BackgroundColor="Black">
+                            <Button x:Name="btn_gallery" IsEnabled="True" Text="افزودن گالری تصاویر" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Grid x:Name="gallerys">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout >
+                        <StackLayout.Padding>50,0,50,0</StackLayout.Padding>
+                        <StackLayout>
+                            <Label IsEnabled="True" Text="فیلد ها" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  TextColor="Black"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Grid x:Name="fields">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout >
+                        <StackLayout.Padding>50,50,50,0</StackLayout.Padding>
+                        <StackLayout BackgroundColor="Green">
+                            <Button x:Name="btn_taiid" IsEnabled="True" Text="ثبت" BackgroundColor="DarkGreen"  TextColor="White"></Button>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="DarkRed">
+                            <Button x:Name="btn_laghv" IsEnabled="True" Text="لغو" BackgroundColor="Red"  TextColor="White"></Button>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

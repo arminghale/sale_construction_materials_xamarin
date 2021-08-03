@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataBase"
+             x:Class="DataBase.Views.AdminDetailsBasket"
+             Title="Basket">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <local:BasketItems/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="FloralWhite">
+            <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+            <ScrollView>
+                <StackLayout>
+                    <Frame>
+                        <Grid VerticalOptions="CenterAndExpand">
+                            <Grid.Padding>100,0,100,0</Grid.Padding>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Row="0" Grid.Column="2">
+                                <Label Text="کاربر" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                                <Label x:Name="user" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Grid.Column="1">
+                                <Label Text="تاریخ پرداخت" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                                <Label x:Name="paydate" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Grid.Column="0">
+                                <Label Text="شماره تراکنش" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                                <Label x:Name="payid" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="1" Grid.Column="2">
+                                <Label Text="تاریخ ایجاد" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                                <Label x:Name="createdate" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="1" Grid.Column="1">
+                                <Label Text="وضعیت" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                                <Label x:Name="vaziat" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="1" Grid.Column="0" x:Name="se" IsVisible="false">
+                                <Label Text="تاریخ ارسال" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                                <Label x:Name="senddate" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                    <Frame>
+                        <Grid VerticalOptions="CenterAndExpand">
+                            <Grid.Padding>100,0,100,0</Grid.Padding>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="1">
+                                <Label Text="آدرس" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                                <Label x:Name="address" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Column="0">
+                                <Label Text="گیرنده" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                                <Label x:Name="girande" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                    <Frame>
+                        <Grid VerticalOptions="CenterAndExpand">
+                            <Grid.Padding>100,0,100,0</Grid.Padding>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="1">
+                                <Label Text="مبلغ کل" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                                <Label x:Name="total" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                    <StackLayout >
+                        <StackLayout.Padding>300,25,300,25</StackLayout.Padding>
+                        <ListView BackgroundColor="FloralWhite"  HasUnevenRows="True" SelectionMode="None" ItemsSource="{Binding items}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell >
+                                        <Frame BorderColor="DarkGray"  CornerRadius="10"  Margin="5,5,5,0">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Grid.Column="2"
+                                                        Text="{Binding title}"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        VerticalTextAlignment="End"
+                                                       FontSize="Default" TextColor="Black"/>
+                                                <Label Grid.Column="1"
+                                                        Text="{Binding co}"
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        VerticalTextAlignment="Center"
+                                                       FontSize="Default" TextColor="Black"/>
+                                                <Label Grid.Column="0"
+                                                        Text="{Binding mab}"
+                                                        HorizontalOptions="StartAndExpand"
+                                                        VerticalTextAlignment="Start"
+                                                       FontSize="Default" TextColor="Black"/>
+                                            </Grid>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

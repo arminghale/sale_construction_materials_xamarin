@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.AnbarHome"
+             Title="Profile">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+      <StackLayout BackgroundColor="FloralWhite">
+            <StackLayout VerticalOptions="StartAndExpand">
+                <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+                
+                <Label x:Name="name" FontSize="Title" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label Text="خوش آمدید" FontSize="Large" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+            </StackLayout>
+            <StackLayout >
+                <StackLayout.Padding>350,0,350,0</StackLayout.Padding>
+                <StackLayout BackgroundColor="Black">
+                    <Button x:Name="btn_product" IsEnabled="True" Text="کالا ها" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                </StackLayout>
+                <StackLayout BackgroundColor="Black">
+                    <Button x:Name="btn_changepass" IsEnabled="True" Text="تغییر کلمه عبور" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                </StackLayout>
+                <StackLayout BackgroundColor="DarkRed">
+                    <Button x:Name="btn_logout" IsEnabled="True" Text="خروج" BackgroundColor="DarkGray"  TextColor="White"></Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

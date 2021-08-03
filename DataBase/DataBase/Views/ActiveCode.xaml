@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.ActiveCode"
+             Title="ActiveCode">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+      <StackLayout BackgroundColor="FloralWhite">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+                
+            <Label Text="کد ارسال شده به ایمیل خود را وارد کنید." TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="code" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                <StackLayout >
+                    <StackLayout.Padding>50,0,50,0</StackLayout.Padding>
+                    <StackLayout BackgroundColor="Green">
+                    <Button x:Name="btn_code" IsEnabled="True" Text="تایید" BackgroundColor="DarkGreen"  TextColor="White"></Button>
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout >
+                    <StackLayout.Padding>100,0,100,0</StackLayout.Padding>
+                    <StackLayout BackgroundColor="Gray">
+                        <Button x:Name="btn_repeat" IsEnabled="True" Text="ارسال مجدد" BackgroundColor="DarkGray"  TextColor="Black"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.AnbarDetailsProduct"
+             Title="Product">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="FloralWhite">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                    <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+
+                    <Label Text="گروه" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label x:Name="prgroup" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+
+                    <Label Text="عنوان" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label x:Name="title" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label Text="قیمت به تومان" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label x:Name="price" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label Text="تعداد" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label x:Name="count" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label Text="مدت آماده سازی" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label x:Name="readyday" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label Text="مدت ارسال" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label x:Name="sendday" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label Text="تگ" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label x:Name="tag" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label Text="توضیخات" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Label x:Name="text" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <StackLayout >
+                        <StackLayout.Padding>50,0,50,0</StackLayout.Padding>
+                        <StackLayout >
+                            <Label x:Name="uploadmainimage" IsEnabled="True" Text="تصویر اصلی" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                            <Image IsVisible="false" x:Name="asliimage" Aspect="AspectFill" WidthRequest="200" HeightRequest="200"></Image>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout >
+                        <StackLayout.Padding>50,0,50,0</StackLayout.Padding>
+                        <StackLayout>
+                            <Label x:Name="btn_gallery" IsEnabled="True" Text="گالری تصاویر" FontAttributes="Bold"  TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Grid x:Name="gallerys">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout >
+                        <StackLayout.Padding>50,0,50,0</StackLayout.Padding>
+                        <StackLayout>
+                            <Label FontAttributes="Bold" IsEnabled="True" Text="فیلد ها" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  TextColor="Black"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Grid x:Name="fields">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.AdminAddEditPerson"
+             Title="User">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="FloralWhite">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                    <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+
+                    <Label Text="نام" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Entry x:Name="name" VerticalTextAlignment="Center" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                    <Label Text="نام خانوادگی" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Entry x:Name="lastname" VerticalTextAlignment="Center" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                    <Label Text="شماره تلفن" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                    <Entry x:Name="phonenumber" VerticalTextAlignment="Center" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                    <StackLayout >
+                        <StackLayout.Padding>50,50,50,0</StackLayout.Padding>
+                        <StackLayout BackgroundColor="Green">
+                            <Button x:Name="btn_taiid" IsEnabled="True" Text="ثبت" BackgroundColor="DarkGreen"  TextColor="White"></Button>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="DarkRed">
+                            <Button x:Name="btn_laghv" IsEnabled="True" Text="لغو" BackgroundColor="Red"  TextColor="White"></Button>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

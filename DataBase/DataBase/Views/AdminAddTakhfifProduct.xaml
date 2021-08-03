@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBase.Views.AdminAddTakhfifProduct"
+             Title="Takhfif">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="logreg" Text="ورود/ثبت نام"
+                     Clicked="btn_notlog" />
+        <ToolbarItem x:Name="prof" Text="پروفایل"
+                     Clicked="btn_profile" />
+        <ToolbarItem Text="خانه"
+                     Clicked="btn_Home" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="FloralWhite">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout.Padding>300,0,300,0</StackLayout.Padding>
+                <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="True" ></ActivityIndicator>
+                <Label Text="زمان شروع" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="starttime" Placeholder="1399-12-23 08:20:00" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                <Label Text="زمان پایان"  TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="endtime" Placeholder="1399-12-23 08:20:00" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                <Label Text="درصد" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Entry x:Name="darsad" BackgroundColor="NavajoWhite" TextColor="Black"></Entry>
+                <StackLayout >
+                    <StackLayout.Padding>50,50,50,0</StackLayout.Padding>
+                    <StackLayout BackgroundColor="Green">
+                        <Button x:Name="btn_taiid" IsEnabled="True" Text="ثبت" BackgroundColor="DarkGreen"  TextColor="White"></Button>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="DarkRed">
+                        <Button x:Name="btn_laghv" IsEnabled="True" Text="لغو" BackgroundColor="Red"  TextColor="White"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
